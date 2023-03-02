@@ -15,7 +15,6 @@ const toggleGameState = () => {
 }
 
 const gameElements = document.getElementById("my_game").children
-// console.log(gameElements)
 const title = gameElements[0]
 const userTask = gameElements[1]
 const userAnswer = gameElements[2]
@@ -28,17 +27,17 @@ const gameState = {
 
 const startGameFunc = () => {
     if (!gameState.taskInProcess) {
-        title.innerText = "Игра началась!"
+        title.innerText = "The game started!"
         userAnswer.value = null
         userTask.innerText = getTask()
         userAnswer.hidden = false
-        btnGame.innerText = "Проверить!"
+        btnGame.innerText = "Check!"
         toggleGameState()
     } else {
         const isRight = gameState.rightAnswer == userAnswer.value
         userTask.innerText = userTask.innerText + " = " + gameState.rightAnswer
-        title.innerText = (isRight) ? "Вы победили!" : "Вы проиграли!"
-        btnGame.innerText = "Начать заново!"
+        title.innerText = (isRight) ? "You won!" : "You lost!"
+        btnGame.innerText = "Start again!"
         toggleGameState()
     }
 }
@@ -68,7 +67,6 @@ const changeCount = (value) => {
 }
 
 const eventFunc = (e) => {
-    // choosedEl[i].className = "choosed_element"
     if (e.target.className === "") {
         e.target.className = "choosed_element"
         changeCount(1)
@@ -81,34 +79,6 @@ const eventFunc = (e) => {
 for (let i = 0; i < choosedEl.length; i++) {
     choosedEl[i].addEventListener("click", eventFunc)
 }
-// choosedEl[2].removeEventListener("click", eventFunc)
-
-// const timeIsOver = () => {
-//     alert("Время вышло!")
-// }
-// setTimeout(timeIsOver, 2000)
-
-// const alarm = setInterval(timeIsOver, 3000)
-
-
-// const alarm = setInterval(() => {
-//     let wantToSleep = confirm("Хотите ли вы спать?")
-//     if (wantToSleep) {
-//         console.log("tic")
-//     } else {
-//         clearInterval(alarm)
-//     }
-// }, 3000)
-
-// clearInterval(alarm)
-
-
-// console.log("1")
-// setTimeout(() => {
-//     console.log("2")
-
-// }, 0)
-// console.log("3")
 
 const postsBlock = document.querySelector(".posts_block-container")
 const showPostsBTN = document.querySelector(".posts_block button")
@@ -136,36 +106,10 @@ function getPosts() {
             for (el of data) {
                 addPost(el.title, el.body)
             }
-            // addPost(data[7].title, data[7].body)
         })
         .catch(err => console.log(err.message))
 }
 
-// function createPost(title, body, userId) {
-//     fetch('https://jsonplaceholder.typicode.com/posts', {
-//         method: 'POST',
-//         body: JSON.stringify({
-//             // title: title,
-//             // body: body,
-//             // userId: userId
-//             title,
-//             body,
-//             userId,
-//         }),
-//         headers: {
-//             'Content-type': 'application/json; charset=UTF-8'
-//         },
-//     })
-//         .then(res => {
-//             console.log(res)
-//         })
-//         .catch(err => console.log(err.message))
-// }
-
-
-// createPost("title", "body", 15)
-
-// showPostsBTN.onclick = () => {getPosts()}
 getPosts()
 
 
