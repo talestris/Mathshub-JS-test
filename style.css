@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -7,43 +8,57 @@
 }
 
 
-header{
+header {
     background-color: rgb(98, 188, 204);
     height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
 }
 
-nav{
-    /* border: 5px dotted black; */
-    /* width: min-content; */
+nav {
     height: inherit;
+    width: inherit;
     display: flex;
-    /* justify-content: start; */
+    justify-content: start;
     align-items: center;
 }
-nav > a{
+
+nav > a {
     text-decoration: none;
     color: black;
     font-size: 20 px;
     padding: 0 30px;
 }
+nav > a:hover {
+    color: rgb(223, 22, 66);
+}
+
+main {
+    margin-top: 50px;
+}
+
 .about_us {
     display: flex;
     justify-content: center;
 }
 
-.about_us img{
+.about_us img {
     width: 300px;
     height: 300px;
     object-fit: cover;
     object-position: top;
 }
+
 .about_us-description {
     display: flex;
     flex-direction: column;
 }
+
 .about_us-description * {
     padding: 5px;
 }
+
 .my_game {
     display: flex;
     flex-direction: column;
@@ -52,37 +67,45 @@ nav > a{
     max-width: 300px;
     margin: 0 auto;
 }
-.my_game > * {
+
+.my_game>* {
     text-align: center;
 }
-.my_game input, .my_game button {
+
+.my_game input,
+.my_game button {
     border: none;
     margin: 5px;
     min-height: 30px;
 }
+
 .my_game button {
     width: max-content;
     background-color: rgb(13, 184, 184);
     padding: 0 10px;
     border-radius: 5px;
 }
+
 .my_game input {
     background-color: lightgrey;
     outline: none;
 }
+
 .choosed_block {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .choosed_block-container {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     max-width: 650px;
 }
-.choosed_block-container > div {
+
+.choosed_block-container>div {
     width: 150px;
     height: 200px;
     display: flex;
@@ -90,12 +113,23 @@ nav > a{
     align-items: center;
     background-color: rgb(207, 55, 55);
 }
+
 .choosed_element {
     border: 3px solid black;
 }
 
+.posts_block {
+    max-width: 600px;
+    margin: 20px auto;
+}
 
+.posts_block h2 {
+    text-align: center;
+}
 
-
-
-
+.posts_block-container>* {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: darkseagreen;
+}
